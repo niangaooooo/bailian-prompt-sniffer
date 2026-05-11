@@ -1,0 +1,6 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DeepSeek Collector">
+  <rect width="64" height="64" rx="14" fill="#101214"/>
+  <path d="M16 42V18h12.5c7.4 0 12.2 4.6 12.2 12s-4.8 12-12.2 12H16Zm7-6h5.1c3.6 0 5.8-2.2 5.8-6s-2.2-6-5.8-6H23v12Z" fill="#E8F7F1"/>
+  <path d="M42 42V18h6.8v18h9.1v6H42Z" fill="#52D3A2"/>
+  <path d="M13 49h38" stroke="#52D3A2" stroke-width="3" stroke-linecap="round"/>
+</svg>

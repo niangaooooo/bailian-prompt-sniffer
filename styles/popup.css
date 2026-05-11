@@ -1,0 +1,227 @@
+:root {
+  color-scheme: dark;
+  --bg: #0d0f0f;
+  --panel: #151918;
+  --panel-2: #1d2421;
+  --line: rgba(139, 255, 199, 0.18);
+  --text: #edf7f1;
+  --muted: rgba(237, 247, 241, 0.62);
+  --accent: #56dfa8;
+  --accent-2: #f1c15d;
+  --danger: #ff7d7d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 380px;
+  min-height: 580px;
+  max-height: 740px;
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(86, 223, 168, 0.16), transparent 30%),
+    linear-gradient(180deg, #111614 0%, var(--bg) 48%, #090b0b 100%);
+  color: var(--text);
+  font-family: "Segoe UI", "Microsoft YaHei", ui-sans-serif, sans-serif;
+  letter-spacing: 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--line);
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.check-row input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.shell {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.mast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(86, 223, 168, 0.18);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 2px 0 0;
+  font-size: 21px;
+  line-height: 1.05;
+}
+
+.settings,
+.task,
+.result {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(21, 25, 24, 0.86);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+}
+
+.settings,
+.task {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid rgba(237, 247, 241, 0.12);
+  border-radius: 6px;
+  background: rgba(5, 7, 7, 0.62);
+  color: var(--text);
+  outline: none;
+}
+
+input,
+select {
+  height: 34px;
+  padding: 0 10px;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+  padding: 9px 10px;
+  line-height: 1.45;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(86, 223, 168, 0.72);
+  box-shadow: 0 0 0 3px rgba(86, 223, 168, 0.12);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.actions .primary {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.ghost {
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 850;
+}
+
+.btn {
+  min-height: 36px;
+  padding: 0 12px;
+}
+
+.primary {
+  background: var(--accent);
+  color: #06110c;
+}
+
+.secondary {
+  background: rgba(237, 247, 241, 0.1);
+  color: var(--text);
+}
+
+.btn:disabled {
+  cursor: wait;
+  opacity: 0.58;
+}
+
+.result {
+  overflow: hidden;
+}
+
+.result-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 38px;
+  padding: 0 10px 0 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.ghost {
+  min-height: 27px;
+  padding: 0 10px;
+  background: transparent;
+  color: var(--accent);
+}
+
+#result-text {
+  min-height: 130px;
+  max-height: 260px;
+  margin: 0;
+  overflow: auto;
+  padding: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--text);
+  font: 12.5px/1.55 "Segoe UI", "Microsoft YaHei", ui-sans-serif, sans-serif;
+}

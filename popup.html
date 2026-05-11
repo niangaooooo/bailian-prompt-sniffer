@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=380, initial-scale=1">
+  <title>Bailian Prompt Sniffer</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="mast">
+      <img src="icons/icon.svg" alt="" class="logo">
+      <div>
+        <div class="eyebrow">Alibaba Bailian</div>
+        <h1>Qwen3.6 Plus Prompt Sniffer</h1>
+      </div>
+    </header>
+
+    <section class="settings">
+      <label class="field">
+        <span>DashScope API Key</span>
+        <input id="api-key" type="password" autocomplete="off" placeholder="sk-...">
+      </label>
+
+      <div class="grid">
+        <label class="field">
+          <span>Model</span>
+          <select id="model">
+            <option value="qwen3.6-plus" selected>qwen3.6-plus</option>
+            <option value="qwen3-vl-plus">qwen3-vl-plus</option>
+            <option value="qwen-vl-plus-latest">qwen-vl-plus-latest</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Thinking</span>
+          <select id="thinking">
+            <option value="disabled">disabled</option>
+            <option value="enabled">enabled</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="grid">
+        <label class="field">
+          <span>Effort</span>
+          <select id="reasoning-effort">
+            <option value="high">high</option>
+            <option value="max">max</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Max Tokens</span>
+          <input id="max-tokens" type="number" min="256" max="8192" step="256">
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <label class="field">
+        <span>Vision Base URL</span>
+        <input id="vision-api-base" type="text" autocomplete="off" placeholder="https://dashscope.aliyuncs.com/compatible-mode/v1">
+      </label>
+
+      <div class="grid">
+        <label class="field">
+          <span>Vision Model</span>
+          <input id="vision-model" type="text" autocomplete="off" placeholder="qwen3.6-plus">
+        </label>
+
+        <label class="field">
+          <span>Vision Key</span>
+          <input id="vision-api-key" type="password" autocomplete="off" placeholder="blank = reuse DashScope key">
+        </label>
+      </div>
+
+      <label class="check-row">
+        <input id="auto-extract-on-hover" type="checkbox">
+        <span>Auto extract prompt when hovering an image</span>
+      </label>
+
+      <button id="save-settings" class="btn secondary" type="button">Save settings</button>
+    </section>
+
+    <section class="task">
+      <label class="field">
+        <span>Instruction</span>
+        <textarea id="prompt" rows="4">Please reverse-engineer this image into GPTImage2-ready prompts for maximum visual similarity. Do not use a fixed style template; extract the current image's exact medium, render grammar, linework, shape language, palette, texture level, complexity level, background simplicity, crop, subject placement, prompt pool, style fingerprint, must-keep anchors, and negative prompt.</textarea>
+      </label>
+
+      <div class="actions">
+        <button id="ask-page" class="btn primary" type="button">Collect current page</button>
+        <button id="ask-selection" class="btn secondary" type="button">Analyze selection</button>
+        <button id="ask-images" class="btn secondary" type="button">List images</button>
+      </div>
+    </section>
+
+    <section class="result">
+      <div class="result-head">
+        <span id="status">Ready</span>
+        <button id="copy-result" class="ghost" type="button">Copy</button>
+      </div>
+      <pre id="result-text"></pre>
+    </section>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

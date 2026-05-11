@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Bailian Prompt Sniffer",
+  "version": "0.1.0",
+  "description": "Sniff browser images and extract reusable prompts with Alibaba Bailian Qwen3.6 Plus.",
+  "action": {
+    "default_title": "Bailian Prompt Sniffer",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "css": ["styles/content.css"],
+      "all_frames": false
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://dashscope.aliyuncs.com/*",
+    "https://dashscope-intl.aliyuncs.com/*",
+    "https://dashscope-us.aliyuncs.com/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; style-src 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*", "styles/*"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}
