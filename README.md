@@ -22,7 +22,7 @@ The extractor also records `complexity_level` and `background_simplicity`. This 
 1. Open `chrome://extensions/`.
 2. Enable Developer mode.
 3. Click `Load unpacked`.
-4. Select this extension folder, `deepseek-collector`.
+4. Select this extension folder, `bailian-prompt-sniffer`.
 5. Open the extension popup and save your DashScope/Bailian API key.
 
 ## Token Controls

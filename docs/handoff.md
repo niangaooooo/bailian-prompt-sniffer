@@ -9,7 +9,7 @@ Last reconciled: 2026-05-08.
 ## Development History
 
 - Started from a review of the sibling `framia` extension, reusing the content-script extraction plus background API bridge pattern, without Framia's auth-token capture, project binding, S3 upload, or canvas insertion behavior.
-- Initial provider experiments used DeepSeek and SiliconFlow Kimi K2.6.
+- Initial provider experiments used other OpenAI-compatible providers and SiliconFlow Kimi K2.6.
 - SiliconFlow attempts failed for the user's key with `VISION_403: Model is private. You can not access it` and then `VISION_403: Model disabled`.
 - The extension was switched to Alibaba Bailian / DashScope Beijing compatible mode with default model `qwen3.6-plus`.
 - Streaming image prompt extraction, a pinned top-right panel, and JSON / Chinese / English tabs were added.
