@@ -689,6 +689,13 @@
     if (message === "NO_API_KEY") {
       return "No DashScope/Bailian API key saved. Open the popup and save your key first.";
     }
+    if (message === "NO_VISION_CONFIG") {
+      return [
+        "Vision config is incomplete. Open the extension popup, save your DashScope/Bailian API key,",
+        "and make sure Vision Base URL is https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "and Vision Model is qwen3.6-plus or qwen3-vl-plus.",
+      ].join(" ");
+    }
     if (message === "NO_SELECTION") return "No selected text on this page.";
     return message;
   }
