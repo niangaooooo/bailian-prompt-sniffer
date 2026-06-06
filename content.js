@@ -236,13 +236,35 @@
   function positionMenu(img, menu) {
     const rect = img.getBoundingClientRect();
     const vw = window.innerWidth;
-    const gap = 8;
-    const width = menu.offsetWidth || 190;
-    let left = rect.right - width - gap;
-    let top = rect.top + gap;
-    if (left < 8) left = rect.left + gap;
-    if (left + width > vw - 8) left = vw - width - 8;
-    if (top < 8) top = 8;
+    const vh = window.innerHeight;
+    const margin = 8;
+    const gap = 10;
+    const width = menu.offsetWidth || 260;
+    const height = menu.offsetHeight || 42;
+    const fitsRight = rect.right + gap + width <= vw - margin;
+    const fitsLeft = rect.left - gap - width >= margin;
+    let left;
+    let top;
+
+    if (fitsRight) {
+      left = rect.right + gap;
+      top = rect.top;
+    } else if (fitsLeft) {
+      left = rect.left - gap - width;
+      top = rect.top;
+    } else if (rect.bottom + gap + height <= vh - margin) {
+      left = rect.left;
+      top = rect.bottom + gap;
+    } else if (rect.top - gap - height >= margin) {
+      left = rect.left;
+      top = rect.top - gap - height;
+    } else {
+      left = Math.min(Math.max(rect.left, margin), vw - width - margin);
+      top = Math.min(Math.max(rect.top, margin), vh - height - margin);
+    }
+
+    left = Math.min(Math.max(left, margin), vw - width - margin);
+    top = Math.min(Math.max(top, margin), vh - height - margin);
     menu.style.left = `${left}px`;
     menu.style.top = `${top}px`;
   }
